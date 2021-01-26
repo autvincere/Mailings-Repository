@@ -41,7 +41,7 @@ const Mails = (props) => {
                          mails
                    </h1>
                     {
-                         user && (<h3>{user.email}</h3>)
+                         user && (<h3>Bienvenido {user.email}</h3>)
                     }
                     <p>
                          Aca va el directorio de mails<br/> 

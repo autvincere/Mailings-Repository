@@ -52,8 +52,8 @@ const SignIn = (props) => {
      const classes = useStyles();
      
      const [user, setUser] = useState({
-          email: ''
-         ,password: ''
+          email: 'aut.vincere@gmail.com'
+         ,password: 'prolam2021'
      })
      let { email, password } = user;
      
