@@ -12,6 +12,7 @@ const styles = makeStyles( theme => ({
      toolbar: theme.mixins.toolbar,
      content: {
           flexGrow: 1,
+          marginTop: '30px',
           backgroundColor: theme.palette.background.default,
           padding: theme.spacing(3),
      },

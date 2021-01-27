@@ -7,7 +7,8 @@ import SignIn from '../components/signIn.component';
 
 const useStyles = makeStyles((theme) => ({
      root: {
-          flexGrow: 1
+          flexGrow: 1,
+          marginTop: '30px'
      },
      height100: {
           height: '90vh'
@@ -24,9 +25,6 @@ const Homepage = () => {
      
      return (
           <div className = {classes.root}>
-               <h1>
-                    homepage
-               </h1>
                <Grid
                  className={classes.height100}
                  container

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { Fragment, useState } from 'react'
 import Navbar from './Navbar.component'
 import {
      Hidden,
@@ -25,20 +25,16 @@ const Nav = ({firebaseUser}) => {
           <div className={style.root}>
                <Navbar handleOpen={handleOpen} firebaseUser={firebaseUser}/>
 
-               <Hidden xsDown>
-                    <BoxMenu
-                         variant="permanent"
-                         open={true}
-                    />
-               </Hidden>
+               {
+                    firebaseUser
+                         ? <Fragment>
+                              <Hidden xsDown> <BoxMenu variant="permanent" open={true} /></Hidden>
+                              <Hidden smUp> <BoxMenu variant="temporary" open={open} onClose={handleOpen} /></Hidden>
+                          </Fragment>   
+                         : null
 
-               <Hidden smUp>
-                    <BoxMenu
-                         variant="temporary"
-                         open={open}
-                         onClose={handleOpen}
-                    />
-               </Hidden>
+               }
+               
 
               
           </div>

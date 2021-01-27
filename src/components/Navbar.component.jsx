@@ -1,12 +1,12 @@
-import React from 'react'
+import React, {Fragment} from 'react'
 import { AppBar, Toolbar, Typography, makeStyles, IconButton, Button } from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'
 
 import { auth } from '../firebase/firebase.utils'
 
-import { NavLink,withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles( theme => ({
      offset: theme.mixins.toolbar,
      menuButton: {
           marginRight: theme.spacing(2),
@@ -17,12 +17,26 @@ const useStyles = makeStyles(theme => ({
      title: {
           flexGrow: 1
      },
-     appBar: {
-          [theme.breakpoints.up('sm')]: {
-               width: `calc(100% - 240px)`,
-               marginLeft: 240,
+     titleWithToolbar: {
+          flexGrow: 1,
+          marginLeft: '240px',
+          [theme.breakpoints.down('sm')]: {
+               marginLeft: '0px',
           },
      },
+     // titleWithToolbar: {
+     //      marginLeft: '240px'
+     //      [theme.breakpoints.down('sm')]: {
+     //           marginLeft: '0px',
+     //      },
+     // },
+     // appBar: {
+     //      [theme.breakpoints.up('sm')]: {
+     //           width: `calc(100% - 240px)`,
+     //           marginLeft: 240,
+     //      },
+     // },
+     // marginLeft: '240px'
 }))
 
 const Navbar = (props) => {
@@ -41,18 +55,30 @@ const Navbar = (props) => {
           <div>
                <AppBar className={style.appBar}>
                     <Toolbar>
-                         <IconButton
-                              color="inherit"
-                              aria-label="menu"
-                              className={style.menuButton}
-                              onClick={() => handleOpen()}
-                         >
-                              <MenuIcon />
-                         </IconButton>
+                         {
+                              firebaseUser !== null
+                                   ?    
+                                   <Fragment>
+                                        <IconButton
+                                                  color="inherit"
+                                                  aria-label="menu"
+                                                  className={style.menuButton}
+                                                  onClick={() => handleOpen()}
+                                             >
+                                             <MenuIcon />
+                                        </IconButton>
+                                        <Typography variant="h6" color="initial" className={style.titleWithToolbar}>
+                                                  Repositorio Mailings
+                                        </Typography>
+                                   </Fragment>
+                                   
+                                   :
+                                   <Typography variant="h6" color="initial" className={style.title}>
+                                   Repositorio Mailings
+                              </Typography>
+                         }
+                       
 
-                         <Typography variant="h6" color="initial" className={style.title}>
-                              Repositorio Mailings
-                         </Typography>
 
                          {
                               firebaseUser !== null
@@ -63,8 +89,9 @@ const Navbar = (props) => {
                                    >
                                         Log Out
                                      </Button>
-                                   : <Button variant="text" color="inherit">
-                                       <NavLink to="/">LogIn</NavLink>
+                                   : <Button variant="text" color="inherit" to="/">
+                                        LogIn
+                                       {/* <NavLink to="/">LogIn</NavLink> */}
                                         </Button>
                          }
                         
