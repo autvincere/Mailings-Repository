@@ -9,10 +9,11 @@ import {
 import Nav from './components/Nav.component';
 import Homepage from './pages/homepage.component'
 import Mails from './pages/mails.component'
+import SubirMail from './pages/subirMail.component'
 
 import { auth } from './firebase/firebase.utils'
 // import DownloadFile from './components/DownloadFile';
-// import UploadFile from './components/UploadFile';
+// import UploadFile from './components/UploadFile.component';
 
 const useStyles = makeStyles({
   container: {
@@ -44,9 +45,14 @@ const App = () => {
             Homepage
           }
           />
-          < Route path = '/mails'
+          <Route path = '/mails'
           component = {
             Mails
+          }
+          />
+           <Route path = '/subirMail'
+          component = {
+            SubirMail
           }
           />
           </Switch>

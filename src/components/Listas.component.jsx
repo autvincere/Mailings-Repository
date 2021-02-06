@@ -6,9 +6,10 @@ import {
      Divider,
      ListItem
 } from '@material-ui/core'
+import DashboardIcon from '@material-ui/icons/Dashboard';
 // import DeveloperBoardIcon from '@material-ui/icons/DeveloperBoard';
-// import DashboardIcon from '@material-ui/icons/Dashboard';
-import ArtTrackIcon from '@material-ui/icons/ArtTrack';
+// import ArtTrackIcon from '@material-ui/icons/ArtTrack';
+import PublishIcon from '@material-ui/icons/Publish';
 import { withRouter } from "react-router-dom";
 
 const Listas = (props) => {
@@ -19,19 +20,19 @@ const Listas = (props) => {
 
                     <ListItem button onClick={() => history.push("/mails")}>
                          <ListItemIcon>
-                              <ArtTrackIcon fontSize="large"/>    
+                              <DashboardIcon fontSize="large" />
                          </ListItemIcon>
-                         <ListItemText primary="Lista de mails"/>
+                         <ListItemText primary="Lista de mails" />
+                    </ListItem>
+
+                    <ListItem button onClick={() => history.push("/subirMail")}>
+                         <ListItemIcon>
+                              <PublishIcon fontSize="large" />
+                         </ListItemIcon>
+                         <ListItemText primary="Subir nuevo mail" />
                     </ListItem>
 
                     {/* <ListItem button>
-                         <ListItemIcon>
-                              <DashboardIcon fontSize="large" />
-                         </ListItemIcon>
-                         <ListItemText primary="Mails" />
-                    </ListItem>
-
-                    <ListItem button>
                          <ListItemIcon>
                               <DeveloperBoardIcon fontSize="large" />
                          </ListItemIcon>

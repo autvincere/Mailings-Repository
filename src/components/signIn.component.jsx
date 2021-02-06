@@ -24,7 +24,7 @@ const useStyles = makeStyles(theme => ({
           overflow: 'hidden',
           [theme.breakpoints.down('sm')]: {
                width: '90%',
-               marginTop:'160px',
+               marginTop:'60px',
           },
      },
      contentLogo: {
@@ -56,12 +56,13 @@ const useStyles = makeStyles(theme => ({
           alignItems: 'center',
           justifyContent: 'center',
           [theme.breakpoints.down('sm')]: {
-               width: '90%',
+               width: '100%',
+               height: '240px',
           },
      },
      button: {
           marginTop: '20px',
-          width: '96%'
+          width: '100%'
      },
      chipError: {
           margin: '6px 0px 9px 32px'
@@ -171,7 +172,6 @@ const SignIn = (props) => {
                                              <TextField
                                                   label="Email"
                                                   name="email"
-                                                  style={{ width: '90%' }}
                                                   value={email}
                                                   onChange={updateStateUser}
                                                   />
@@ -195,7 +195,6 @@ const SignIn = (props) => {
                                              <TextField
                                                   label="Password"
                                                   name="password"
-                                                  style={{ width: '110%' }}
                                                   value={password}
                                                   onChange={updateStateUser}
                                              />

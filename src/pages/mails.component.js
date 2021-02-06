@@ -36,7 +36,7 @@ const Mails = (props) => {
 
 
      return (
-           <div className = {style.content}>
+          <div className = {style.content}>
                <div className={style.toolbar}>
                     <h1>
                          mails
@@ -51,7 +51,7 @@ const Mails = (props) => {
                     </p>
               
                 </div>
-                </div>
+          </div>
      )
 }
 

@@ -16,7 +16,8 @@ const UploadFile = () => {
 
      const handleFolder = e => {
           if (e.target.value) {
-               setFolder(e.target.value);    
+               setFolder(e.target.value); 
+                  
           }
           // const value = e.target.value
      }
